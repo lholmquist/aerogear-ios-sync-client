@@ -8,6 +8,11 @@ performs the actual work of the DiffSync protocol, please refer to it's README.m
 ## Prerequisites 
 This project requires Xcode 6.0 to run.
 
+This project uses [Cocoapods](http://cocoapods.org/) to manage dependencies. You need to install the dependencies before building and
+using the project:
+
+    pod install
+
 ## Building
 
 Building can be done by opening the project in Xcode:
