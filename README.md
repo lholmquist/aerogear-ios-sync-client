@@ -14,16 +14,15 @@ Building can be done by opening the project in Xcode:
 
     open AeroGearSyncClient.xcodeproj
 
-or you can use the command line.
-Make sure you are using Xcode6.0: 
+or you can use the command line:
 
-    xcodebuild -scheme AeroGearSyncClient build
+    xcodebuild -workspace AeroGearSyncClient.xcworkspace/ -scheme AeroGearSyncClient -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 
 ## Testing
 Tests can be run from with in Xcode using Product->Test menu option (CMD+U).  
 You can also run test from the command:
 
-    xcodebuild -scheme AeroGearSyncClient -destination 'platform=iOS Simulator,name=iPhone 5s' test
+    xcodebuild -workspace AeroGearSyncClient.xcworkspace/ -scheme AeroGearSyncClient -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO test
 
 
 
