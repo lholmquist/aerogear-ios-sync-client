@@ -19,8 +19,7 @@ profile
 DerivedData
 **/*.xcuserstate
 
-# CocoaPods
-Pods/
-
 #Docset/AppleDoc
 */Docset/*
+
+Pods/*
