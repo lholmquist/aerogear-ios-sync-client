@@ -13,6 +13,18 @@ using the project:
 
     pod install
 
+This project also uses a git submodule as a temporary solution until we can have Swift project in Cocoapods. The submodule need to be
+initialized and updated:
+
+    git submodule init
+    git submodule update
+
+Now, it is even worst that our submodule also contains a submodule (sorry):
+
+    cd aerogear-ios-sync
+    git submodule init
+    git submodule update
+
 ## Building
 
 Building can be done by opening the project in Xcode:

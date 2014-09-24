@@ -1,4 +1,5 @@
 import Foundation
+import AeroGearSync
 
 public class SyncClient {
 
@@ -12,6 +13,9 @@ public class SyncClient {
     public func connect() {
         ws = SRWebSocket(URL: NSURL(string: serverUrl))
         ws.open()
+    }
+    
+    public func addDocument<T>(clientDocument: ClientDocument<T>) {
     }
     
     public func close() {
