@@ -13,6 +13,7 @@
 		C587E6DE19D047370098638A /* SyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6DD19D047370098638A /* SyncClient.swift */; };
 		C587E6E319D14E370098638A /* AeroGearSyncClient-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */; };
 		C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */; };
+		C5C56DAC19D2CF77000AF339 /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +23,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C587E6C319D0460E0098638A;
 			remoteInfo = AeroGearSyncClient;
+		};
+		C5C56DA819D2CF3F000AF339 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 488B6B5C196B19BC000297C9;
+			remoteInfo = AeroGearSync;
+		};
+		C5C56DAA19D2CF3F000AF339 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 488B6B67196B19BC000297C9;
+			remoteInfo = AeroGearSyncTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +53,7 @@
 		C587E6E419D1691E0098638A /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
 		C587E6EA19D16A7D0098638A /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		C587E6EC19D16B2F0098638A /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
+		C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C56DAC19D2CF77000AF339 /* AeroGearSync.framework in Frameworks */,
 				5568B6B889264A7AA7DB8487 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +112,7 @@
 		C587E6C619D0460E0098638A /* AeroGearSyncClient */ = {
 			isa = PBXGroup;
 			children = (
+				C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */,
 				C587E6C719D0460E0098638A /* Supporting Files */,
 				C587E6DD19D047370098638A /* SyncClient.swift */,
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
@@ -125,6 +143,15 @@
 				C587E6D219D0460E0098638A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5C56DA319D2CF3F000AF339 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */,
+				C5C56DAB19D2CF3F000AF339 /* AeroGearSyncTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +235,12 @@
 			mainGroup = C587E6BA19D0460E0098638A;
 			productRefGroup = C587E6C519D0460E0098638A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C5C56DA319D2CF3F000AF339 /* Products */;
+					ProjectRef = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C587E6C319D0460E0098638A /* AeroGearSyncClient */,
@@ -215,6 +248,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AeroGearSync.framework;
+			remoteRef = C5C56DA819D2CF3F000AF339 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5C56DAB19D2CF3F000AF339 /* AeroGearSyncTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AeroGearSyncTests.xctest;
+			remoteRef = C5C56DAA19D2CF3F000AF339 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C587E6C219D0460E0098638A /* Resources */ = {
