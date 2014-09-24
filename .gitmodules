@@ -1,3 +1,6 @@
 [submodule "aerogear-ios-sync"]
 	path = aerogear-ios-sync
 	url = https://github.com/danbev/aerogear-ios-sync.git
+[submodule "SwiftyJSON"]
+	path = SwiftyJSON
+	url = git@github.com:SwiftyJSON/SwiftyJSON.git

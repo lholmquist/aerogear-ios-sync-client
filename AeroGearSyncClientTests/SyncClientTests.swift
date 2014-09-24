@@ -6,8 +6,8 @@ import AeroGearSync
 class SyncClientTests: XCTestCase {
     
     func testAddDocument() {
-        let syncClient = SyncClient(serverUrl: "http://localhost:7777/simplepush")
-        XCTAssertEqual("http://localhost:7777/simplepush", syncClient.serverUrl)
+        let syncClient = SyncClient(url: "http://localhost:7777/simplepush")
+        syncClient.connect()
         let document = ClientDocument<String>(id: "1234", clientId: "iosClient", content: "Fletch")
         syncClient.addDocument(document)
     }
