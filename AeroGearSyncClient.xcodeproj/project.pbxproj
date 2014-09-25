@@ -7,37 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		132FC61BA6304CA28A53797A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B419AC549DF482991E7F5C4 /* libPods.a */; };
-		5568B6B889264A7AA7DB8487 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B419AC549DF482991E7F5C4 /* libPods.a */; };
+		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
+		C50E2CE019D340F900C3D5FD /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */; };
 		C587E6D419D0460E0098638A /* SyncClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6D319D0460E0098638A /* SyncClientTests.swift */; };
 		C587E6DE19D047370098638A /* SyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6DD19D047370098638A /* SyncClient.swift */; };
-		C587E6E319D14E370098638A /* AeroGearSyncClient-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */; };
 		C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */; };
-		C5C56DAC19D2CF77000AF339 /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */; };
 		C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C50E2CBC19D30D9300C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 488B6B5C196B19BC000297C9;
+			remoteInfo = AeroGearSync;
+		};
+		C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 488B6B67196B19BC000297C9;
+			remoteInfo = AeroGearSyncTests;
+		};
+		C50E2CD819D340D200C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6B2082D1450F597009315AF;
+			remoteInfo = SocketRocket;
+		};
+		C50E2CDA19D340D200C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F668C880153E91210044DBAC;
+			remoteInfo = SocketRocketOSX;
+		};
+		C50E2CDC19D340D200C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6BDA802145900D200FE3253;
+			remoteInfo = SRWebSocketTests;
+		};
+		C50E2CDE19D340D200C3D5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62417E314D52F3C003CE997;
+			remoteInfo = TestChat;
+		};
 		C587E6E719D16A610098638A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C587E6BB19D0460E0098638A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C587E6C319D0460E0098638A;
 			remoteInfo = AeroGearSyncClient;
-		};
-		C5C56DA819D2CF3F000AF339 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 488B6B5C196B19BC000297C9;
-			remoteInfo = AeroGearSync;
-		};
-		C5C56DAA19D2CF3F000AF339 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 488B6B67196B19BC000297C9;
-			remoteInfo = AeroGearSyncTests;
 		};
 		C5C56DCC19D2EEC7000AF339 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -70,8 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		6B419AC549DF482991E7F5C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
+		C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
 		C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AeroGearSyncClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C587E6C819D0460E0098638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C587E6CF19D0460E0098638A /* AeroGearSyncClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroGearSyncClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +105,6 @@
 		C587E6D319D0460E0098638A /* SyncClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncClientTests.swift; sourceTree = "<group>"; };
 		C587E6DD19D047370098638A /* SyncClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncClient.swift; sourceTree = "<group>"; };
 		C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AeroGearSyncClient-Bridging-Header.h"; sourceTree = "<group>"; };
-		C587E6E419D1691E0098638A /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
-		C587E6EA19D16A7D0098638A /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
-		C587E6EC19D16B2F0098638A /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
-		C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50E2CE019D340F900C3D5FD /* SocketRocket.framework in Frameworks */,
+				C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */,
 				C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */,
-				C5C56DAC19D2CF77000AF339 /* AeroGearSync.framework in Frameworks */,
-				5568B6B889264A7AA7DB8487 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */,
-				132FC61BA6304CA28A53797A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,22 +133,39 @@
 		70C301C609F74EEDB65B5F7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C587E6EC19D16B2F0098638A /* libPods-SocketRocket.a */,
-				C587E6EA19D16A7D0098638A /* libPods.a */,
-				C587E6E419D1691E0098638A /* libPods-SocketRocket.a */,
-				6B419AC549DF482991E7F5C4 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C50E2CB719D30D9300C3D5FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */,
+				C50E2CBF19D30D9300C3D5FD /* AeroGearSyncTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C50E2CD219D340D200C3D5FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C50E2CD919D340D200C3D5FD /* libSocketRocket.a */,
+				C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */,
+				C50E2CDD19D340D200C3D5FD /* SRWebSocketTests.octest */,
+				C50E2CDF19D340D200C3D5FD /* TestChat.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C587E6BA19D0460E0098638A = {
 			isa = PBXGroup;
 			children = (
+				C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */,
+				C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */,
 				C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */,
 				C587E6C619D0460E0098638A /* AeroGearSyncClient */,
 				C587E6D019D0460E0098638A /* AeroGearSyncClientTests */,
 				C587E6C519D0460E0098638A /* Products */,
-				0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */,
 				70C301C609F74EEDB65B5F7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -144,7 +182,6 @@
 		C587E6C619D0460E0098638A /* AeroGearSyncClient */ = {
 			isa = PBXGroup;
 			children = (
-				C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */,
 				C587E6C719D0460E0098638A /* Supporting Files */,
 				C587E6DD19D047370098638A /* SyncClient.swift */,
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
@@ -177,15 +214,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C5C56DA319D2CF3F000AF339 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */,
-				C5C56DAB19D2CF3F000AF339 /* AeroGearSyncTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C5C56DC419D2EEC7000AF339 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +232,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C587E6E319D14E370098638A /* AeroGearSyncClient-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +242,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C587E6D719D0460E0098638A /* Build configuration list for PBXNativeTarget "AeroGearSyncClient" */;
 			buildPhases = (
-				B9C15A01C2534A88873D9B6B /* Check Pods Manifest.lock */,
 				C587E6BF19D0460E0098638A /* Sources */,
 				C587E6C019D0460E0098638A /* Frameworks */,
 				C587E6C119D0460E0098638A /* Headers */,
 				C587E6C219D0460E0098638A /* Resources */,
-				84D015FFA218405499E9B2FF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,11 +260,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C587E6DA19D0460E0098638A /* Build configuration list for PBXNativeTarget "AeroGearSyncClientTests" */;
 			buildPhases = (
-				5152370063E54450824B054F /* Check Pods Manifest.lock */,
 				C587E6CB19D0460E0098638A /* Sources */,
 				C587E6CC19D0460E0098638A /* Frameworks */,
 				C587E6CD19D0460E0098638A /* Resources */,
-				2C6A348CF43B4FD69E2B3614 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,8 +303,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C5C56DA319D2CF3F000AF339 /* Products */;
-					ProjectRef = C5C56DA219D2CF3F000AF339 /* AeroGearSync.xcodeproj */;
+					ProductGroup = C50E2CB719D30D9300C3D5FD /* Products */;
+					ProjectRef = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
+				},
+				{
+					ProductGroup = C50E2CD219D340D200C3D5FD /* Products */;
+					ProjectRef = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
 				},
 				{
 					ProductGroup = C5C56DC419D2EEC7000AF339 /* Products */;
@@ -297,18 +324,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C5C56DA919D2CF3F000AF339 /* AeroGearSync.framework */ = {
+		C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = AeroGearSync.framework;
-			remoteRef = C5C56DA819D2CF3F000AF339 /* PBXContainerItemProxy */;
+			remoteRef = C50E2CBC19D30D9300C3D5FD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C5C56DAB19D2CF3F000AF339 /* AeroGearSyncTests.xctest */ = {
+		C50E2CBF19D30D9300C3D5FD /* AeroGearSyncTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = AeroGearSyncTests.xctest;
-			remoteRef = C5C56DAA19D2CF3F000AF339 /* PBXContainerItemProxy */;
+			remoteRef = C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C50E2CD919D340D200C3D5FD /* libSocketRocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSocketRocket.a;
+			remoteRef = C50E2CD819D340D200C3D5FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketRocket.framework;
+			remoteRef = C50E2CDA19D340D200C3D5FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C50E2CDD19D340D200C3D5FD /* SRWebSocketTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SRWebSocketTests.octest;
+			remoteRef = C50E2CDC19D340D200C3D5FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C50E2CDF19D340D200C3D5FD /* TestChat.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestChat.app;
+			remoteRef = C50E2CDE19D340D200C3D5FD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */ = {
@@ -357,69 +412,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2C6A348CF43B4FD69E2B3614 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5152370063E54450824B054F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		84D015FFA218405499E9B2FF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9C15A01C2534A88873D9B6B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C587E6BF19D0460E0098638A /* Sources */ = {
@@ -536,8 +528,8 @@
 		};
 		C587E6D819D0460E0098638A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -556,8 +548,8 @@
 		};
 		C587E6D919D0460E0098638A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -575,8 +567,8 @@
 		};
 		C587E6DB19D0460E0098638A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -599,8 +591,8 @@
 		};
 		C587E6DC19D0460E0098638A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E30EC1B9A784AD5B9CB9E14 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

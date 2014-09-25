@@ -9,7 +9,8 @@
 #ifndef AeroGearSyncClient_AeroGearSyncClient_Bridging_Header_h
 #define AeroGearSyncClient_AeroGearSyncClient_Bridging_Header_h
 
-#import <SocketRocket/SRWebSocket.h>
+#import "SwiftyJSON/SwiftyJSON.h"
+#import "SocketRocket/SRWebSocket.h"
 
 
 #endif
