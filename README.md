@@ -24,7 +24,7 @@ Now, it is even worst that our submodule also contains a submodule (sorry):
 
 Building can be done by opening the project in Xcode:
 
-    open AeroGearSyncClient.xcodeproj
+    open AeroGearSyncClient.xcworkspace
 
 or you can use the command line:
 

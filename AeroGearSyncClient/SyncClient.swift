@@ -35,18 +35,18 @@ public class SyncClient: WebsocketDelegate {
     }
     func websocketDidReceiveMessage(text: String) {
         println("Message: \(text)")
-        //self.socket.writeString(text) //example on how to write a string the socket
     }
     
     func websocketDidReceiveData(data: NSData) {
         println("got some data: \(data.length)")
-        //self.socket.writeData(data) //example on how to write binary data to the socket
     }
 
-    public func addDocument<T>(clientDocument: ClientDocument<T>) {
-        let json = JSON(object: clientDocument)
-        println("JSON: \(json)")
-        ws.writeString(json.description)
+    public func addDocument(doc: ClientDocument<String>) {
+        ws.writeString(addMsgJson(doc))
+    }
+
+    func addMsgJson(doc: ClientDocument<String>) -> String {
+        return "{\"msgType\": \"add\", \"id\": \"\(doc.id)\", \"clientId\": \"\(doc.clientId)\", \"content\": \"\(doc.content)\"}";
     }
     
 }
