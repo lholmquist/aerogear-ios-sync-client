@@ -7,3 +7,6 @@
 [submodule "SocketRocket"]
 	path = SocketRocket
 	url = git@github.com:square/SocketRocket.git
+[submodule "danbev-starscream"]
+	path = danbev-starscream
+	url = git@github.com:danbev/starscream.git

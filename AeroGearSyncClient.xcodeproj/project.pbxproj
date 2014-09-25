@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
-		C50E2CE019D340F900C3D5FD /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */; };
+		C50E2D0519D3FC6800C3D5FD /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E2D0419D3FC6800C3D5FD /* Websocket.swift */; };
 		C587E6D419D0460E0098638A /* SyncClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6D319D0460E0098638A /* SyncClientTests.swift */; };
 		C587E6DE19D047370098638A /* SyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6DD19D047370098638A /* SyncClient.swift */; };
 		C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */; };
@@ -29,34 +29,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 488B6B67196B19BC000297C9;
 			remoteInfo = AeroGearSyncTests;
-		};
-		C50E2CD819D340D200C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6B2082D1450F597009315AF;
-			remoteInfo = SocketRocket;
-		};
-		C50E2CDA19D340D200C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F668C880153E91210044DBAC;
-			remoteInfo = SocketRocketOSX;
-		};
-		C50E2CDC19D340D200C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6BDA802145900D200FE3253;
-			remoteInfo = SRWebSocketTests;
-		};
-		C50E2CDE19D340D200C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F62417E314D52F3C003CE997;
-			remoteInfo = TestChat;
 		};
 		C587E6E719D16A610098638A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -97,7 +69,7 @@
 
 /* Begin PBXFileReference section */
 		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
-		C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
+		C50E2D0419D3FC6800C3D5FD /* Websocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Websocket.swift; path = "danbev-starscream/Websocket.swift"; sourceTree = SOURCE_ROOT; };
 		C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AeroGearSyncClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C587E6C819D0460E0098638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C587E6CF19D0460E0098638A /* AeroGearSyncClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroGearSyncClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C50E2CE019D340F900C3D5FD /* SocketRocket.framework in Frameworks */,
 				C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */,
 				C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -146,21 +117,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C50E2CD219D340D200C3D5FD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C50E2CD919D340D200C3D5FD /* libSocketRocket.a */,
-				C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */,
-				C50E2CDD19D340D200C3D5FD /* SRWebSocketTests.octest */,
-				C50E2CDF19D340D200C3D5FD /* TestChat.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C587E6BA19D0460E0098638A = {
 			isa = PBXGroup;
 			children = (
-				C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */,
 				C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */,
 				C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */,
 				C587E6C619D0460E0098638A /* AeroGearSyncClient */,
@@ -182,6 +141,7 @@
 		C587E6C619D0460E0098638A /* AeroGearSyncClient */ = {
 			isa = PBXGroup;
 			children = (
+				C50E2D0419D3FC6800C3D5FD /* Websocket.swift */,
 				C587E6C719D0460E0098638A /* Supporting Files */,
 				C587E6DD19D047370098638A /* SyncClient.swift */,
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
@@ -297,6 +257,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C587E6BA19D0460E0098638A;
 			productRefGroup = C587E6C519D0460E0098638A /* Products */;
@@ -305,10 +266,6 @@
 				{
 					ProductGroup = C50E2CB719D30D9300C3D5FD /* Products */;
 					ProjectRef = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
-				},
-				{
-					ProductGroup = C50E2CD219D340D200C3D5FD /* Products */;
-					ProjectRef = C50E2CD119D340D200C3D5FD /* SocketRocket.xcodeproj */;
 				},
 				{
 					ProductGroup = C5C56DC419D2EEC7000AF339 /* Products */;
@@ -336,34 +293,6 @@
 			fileType = wrapper.cfbundle;
 			path = AeroGearSyncTests.xctest;
 			remoteRef = C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C50E2CD919D340D200C3D5FD /* libSocketRocket.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSocketRocket.a;
-			remoteRef = C50E2CD819D340D200C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C50E2CDB19D340D200C3D5FD /* SocketRocket.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SocketRocket.framework;
-			remoteRef = C50E2CDA19D340D200C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C50E2CDD19D340D200C3D5FD /* SRWebSocketTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SRWebSocketTests.octest;
-			remoteRef = C50E2CDC19D340D200C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C50E2CDF19D340D200C3D5FD /* TestChat.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = TestChat.app;
-			remoteRef = C50E2CDE19D340D200C3D5FD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */ = {
@@ -419,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587E6DE19D047370098638A /* SyncClient.swift in Sources */,
+				C50E2D0519D3FC6800C3D5FD /* Websocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

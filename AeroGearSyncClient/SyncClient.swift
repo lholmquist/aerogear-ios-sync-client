@@ -2,76 +2,53 @@ import Foundation
 import AeroGearSync
 import SwiftyJSON
 
-public class SyncClient: NSObject, SRWebSocketDelegate {
+public class SyncClient: WebsocketDelegate {
 
-    var ws: SRWebSocket!
-
+    var ws: Websocket!
+    
     public init(url: String) {
-        ws = SRWebSocket(URL: NSURL(string: url))
-        super.init()
+        ws = Websocket(url: NSURL(string: url))
+        ws.delegate = self
+    }
+
+    public init(url: String, protocols: Array<String>) {
+        ws = Websocket(url: NSURL(string: url), protocols: protocols)
         ws.delegate = self
     }
 
     public func connect() {
-        ws.open()
+        ws.connect()
+    }
+    
+    public func close() {
+        ws.disconnect()
     }
 
-    public func close() {
-        ws.close()
+    func websocketDidConnect() {
+        println("Websocket is connected")
+    }
+    func websocketDidDisconnect(error: NSError?) {
+        println("Websocket is disconnected: \(error!.localizedDescription)")
+    }
+    func websocketDidWriteError(error: NSError?) {
+        println("Error from the Websocket: \(error!.localizedDescription)")
+    }
+    func websocketDidReceiveMessage(text: String) {
+        println("Message: \(text)")
+        //self.socket.writeString(text) //example on how to write a string the socket
+    }
+    
+    func websocketDidReceiveData(data: NSData) {
+        println("got some data: \(data.length)")
+        //self.socket.writeData(data) //example on how to write binary data to the socket
     }
 
     public func addDocument<T>(clientDocument: ClientDocument<T>) {
-        if readyState() == ReadyState.Open {
-            let json = JSON(object: clientDocument)
-            println("JSON: \(json)")
-        } else {
-            println("not connected!!!")
-        }
+        let json = JSON(object: clientDocument)
+        println("JSON: \(json)")
+        ws.writeString(json.description)
     }
     
-    public func webSocketDidOpen(webSocket: SRWebSocket) {
-        
-    }
-
-    public func webSocket(webSocket: SRWebSocket!, didReceiveMessage message: AnyObject!) {
-        if let messageString = message as? String {
-            println("Message: \(messageString)")
-        }
-    }
-
-    public func webSocket(webSocket: SRWebSocket!, didFailWithError error: NSError!) {
-        println("Message: \(error)")
-    }
-
-    func webSocket(webSocket: SRWebSocket!, didCloseWithCode code: Int!, reason:String!, wasClean:Bool!) {
-        println("Closed: code=\(code) reason=\(reason)")
-    }
-
-    private func readyState() -> ReadyState {
-        if ws != nil {
-            switch ws.readyState.value {
-            case 0:
-                return ReadyState.Connecting
-            case 1:
-                return ReadyState.Open
-            case 2:
-                return ReadyState.Closing
-            case 3:
-                return ReadyState.Closed
-            default:
-                return ReadyState.Unknown
-            }
-        }
-        return ReadyState.Unknown
-    }
-
-    private enum ReadyState: Int {
-        case Connecting = 0
-        case Open = 1
-        case Closing = 2
-        case Closed = 3
-        case Unknown = -1
-    }
 }
 
 
