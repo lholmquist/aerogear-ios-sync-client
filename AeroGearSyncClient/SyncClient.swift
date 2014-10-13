@@ -2,22 +2,34 @@ import Foundation
 import AeroGearSync
 import SwiftyJSON
 
-public class SyncClient: WebsocketDelegate {
+public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: WebsocketDelegate {
 
+    typealias T = CS.T
     var ws: Websocket!
+    var documents = Dictionary<String, ClientDocument<T>>()
+    let syncEngine: ClientSyncEngine<CS, D>
     
-    public init(url: String) {
-        ws = Websocket(url: NSURL(string: url))
+    public convenience init(url: String, syncEngine: ClientSyncEngine<CS, D>) {
+        self.init(url: url, optionalProtocols: Optional.None, syncEngine: syncEngine)
+    }
+
+    public convenience init(url: String, protocols: Array<String>, syncEngine: ClientSyncEngine<CS, D>) {
+        self.init(url: url, optionalProtocols: protocols, syncEngine: syncEngine)
+    }
+
+    private init(url: String, optionalProtocols: Array<String>?, syncEngine: ClientSyncEngine<CS, D>) {
+        self.syncEngine = syncEngine
+        if let protocols = optionalProtocols {
+            ws = Websocket(url: NSURL(string: url), protocols: protocols)
+        } else {
+            ws = Websocket(url: NSURL(string: url))
+        }
         ws.delegate = self
     }
 
-    public init(url: String, protocols: Array<String>) {
-        ws = Websocket(url: NSURL(string: url), protocols: protocols)
-        ws.delegate = self
-    }
-
-    public func connect() {
+    public func connect() -> SyncClient {
         ws.connect()
+        return self
     }
     
     public func close() {
@@ -41,14 +53,15 @@ public class SyncClient: WebsocketDelegate {
         println("got some data: \(data.length)")
     }
 
-    public func addDocument(doc: ClientDocument<String>) {
+    public func addDocument(doc: ClientDocument<T>, callback: (ClientDocument<T>) -> ()) {
+        syncEngine.addDocument(doc, callback: callback)
         ws.writeString(addMsgJson(doc))
     }
 
-    func addMsgJson(doc: ClientDocument<String>) -> String {
+    private func addMsgJson(doc: ClientDocument<T>) -> String {
         return "{\"msgType\": \"add\", \"id\": \"\(doc.id)\", \"clientId\": \"\(doc.clientId)\", \"content\": \"\(doc.content)\"}";
     }
-    
+
 }
 
 
