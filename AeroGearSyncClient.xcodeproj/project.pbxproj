@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
-		C50E2D0519D3FC6800C3D5FD /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50E2D0419D3FC6800C3D5FD /* Websocket.swift */; };
+		C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5755DA219FE37780098B6B2 /* Starscream.framework */; };
 		C587E6D419D0460E0098638A /* SyncClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6D319D0460E0098638A /* SyncClientTests.swift */; };
 		C587E6DE19D047370098638A /* SyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6DD19D047370098638A /* SyncClient.swift */; };
 		C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */; };
@@ -29,6 +29,34 @@
 			proxyType = 2;
 			remoteGlobalIDString = 488B6B67196B19BC000297C9;
 			remoteInfo = AeroGearSyncTests;
+		};
+		C5755DA119FE37780098B6B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6B3E79E619D48B7F006071F7;
+			remoteInfo = Starscream;
+		};
+		C5755DA319FE37780098B6B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6B3E79F119D48B7F006071F7;
+			remoteInfo = StarscreamTests;
+		};
+		C5755DA519FE37780098B6B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9C3E35F19E48FF1009FC285;
+			remoteInfo = StarscreamOSX;
+		};
+		C5755DA719FE37780098B6B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9C3E36919E48FF1009FC285;
+			remoteInfo = StarscreamOSXTests;
 		};
 		C587E6E719D16A610098638A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -69,7 +97,7 @@
 
 /* Begin PBXFileReference section */
 		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
-		C50E2D0419D3FC6800C3D5FD /* Websocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Websocket.swift; path = "danbev-starscream/Websocket.swift"; sourceTree = SOURCE_ROOT; };
+		C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
 		C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AeroGearSyncClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C587E6C819D0460E0098638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C587E6CF19D0460E0098638A /* AeroGearSyncClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroGearSyncClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */,
 				C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */,
 				C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -117,9 +146,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C5755D9B19FE37780098B6B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5755DA219FE37780098B6B2 /* Starscream.framework */,
+				C5755DA419FE37780098B6B2 /* StarscreamTests.xctest */,
+				C5755DA619FE37780098B6B2 /* StarscreamOSX.framework */,
+				C5755DA819FE37780098B6B2 /* StarscreamOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C587E6BA19D0460E0098638A = {
 			isa = PBXGroup;
 			children = (
+				C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */,
 				C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */,
 				C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */,
 				C587E6C619D0460E0098638A /* AeroGearSyncClient */,
@@ -141,7 +182,6 @@
 		C587E6C619D0460E0098638A /* AeroGearSyncClient */ = {
 			isa = PBXGroup;
 			children = (
-				C50E2D0419D3FC6800C3D5FD /* Websocket.swift */,
 				C587E6C719D0460E0098638A /* Supporting Files */,
 				C587E6DD19D047370098638A /* SyncClient.swift */,
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
@@ -268,6 +308,10 @@
 					ProjectRef = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
 				},
 				{
+					ProductGroup = C5755D9B19FE37780098B6B2 /* Products */;
+					ProjectRef = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
+				},
+				{
 					ProductGroup = C5C56DC419D2EEC7000AF339 /* Products */;
 					ProjectRef = C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */;
 				},
@@ -293,6 +337,34 @@
 			fileType = wrapper.cfbundle;
 			path = AeroGearSyncTests.xctest;
 			remoteRef = C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5755DA219FE37780098B6B2 /* Starscream.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Starscream.framework;
+			remoteRef = C5755DA119FE37780098B6B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5755DA419FE37780098B6B2 /* StarscreamTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StarscreamTests.xctest;
+			remoteRef = C5755DA319FE37780098B6B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5755DA619FE37780098B6B2 /* StarscreamOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = StarscreamOSX.framework;
+			remoteRef = C5755DA519FE37780098B6B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5755DA819FE37780098B6B2 /* StarscreamOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StarscreamOSXTests.xctest;
+			remoteRef = C5755DA719FE37780098B6B2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */ = {
@@ -348,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587E6DE19D047370098638A /* SyncClient.swift in Sources */,
-				C50E2D0519D3FC6800C3D5FD /* Websocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

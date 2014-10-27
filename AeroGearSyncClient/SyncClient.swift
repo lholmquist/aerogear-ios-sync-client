@@ -1,6 +1,7 @@
 import Foundation
 import AeroGearSync
 import SwiftyJSON
+import Starscream
 
 public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: WebsocketDelegate {
 
@@ -20,9 +21,9 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     private init(url: String, optionalProtocols: Array<String>?, syncEngine: ClientSyncEngine<CS, D>) {
         self.syncEngine = syncEngine
         if let protocols = optionalProtocols {
-            ws = Websocket(url: NSURL(string: url), protocols: protocols)
+            ws = Websocket(url: NSURL(string: url)!, protocols: protocols)
         } else {
-            ws = Websocket(url: NSURL(string: url))
+            ws = Websocket(url: NSURL(string: url)!)
         }
         ws.delegate = self
     }
@@ -36,20 +37,23 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
         ws.disconnect()
     }
 
-    func websocketDidConnect() {
+    public func websocketDidConnect() {
         println("Websocket is connected")
     }
-    func websocketDidDisconnect(error: NSError?) {
+    
+    public func websocketDidDisconnect(error: NSError?) {
         println("Websocket is disconnected: \(error!.localizedDescription)")
     }
-    func websocketDidWriteError(error: NSError?) {
+    
+    public func websocketDidWriteError(error: NSError?) {
         println("Error from the Websocket: \(error!.localizedDescription)")
     }
-    func websocketDidReceiveMessage(text: String) {
+    
+    public func websocketDidReceiveMessage(text: String) {
         println("Message: \(text)")
     }
     
-    func websocketDidReceiveData(data: NSData) {
+    public func websocketDidReceiveData(data: NSData) {
         println("got some data: \(data.length)")
     }
 
