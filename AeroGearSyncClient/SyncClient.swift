@@ -59,11 +59,14 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
 
     public func addDocument(doc: ClientDocument<T>, callback: (ClientDocument<T>) -> ()) {
         syncEngine.addDocument(doc, callback: callback)
-        ws.writeString(addMsgJson(doc))
+        ws.writeString(JsonConverter.asJson(doc))
     }
 
-    private func addMsgJson(doc: ClientDocument<T>) -> String {
-        return "{\"msgType\": \"add\", \"id\": \"\(doc.id)\", \"clientId\": \"\(doc.clientId)\", \"content\": \"\(doc.content)\"}";
+    public func diffAndSend(doc: ClientDocument<T>) -> SyncClient {
+        if let patchMessage = syncEngine.diff(doc) {
+            ws.writeString(JsonConverter.asJson(patchMessage))
+        }
+        return self
     }
 
 }

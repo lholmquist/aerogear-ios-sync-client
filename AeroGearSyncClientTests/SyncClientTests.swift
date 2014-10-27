@@ -31,4 +31,14 @@ class SyncClientTests: XCTestCase {
         XCTAssertEqual("Fletch", added!.content)
     }
     
+    func testDiffAndSync() {
+        let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
+        let callback = {(doc: ClientDocument<T>) -> () in
+            println ("Testing callback: received: \(doc)")
+        }
+        syncClient.connect().addDocument(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch"), callback)
+        sleep(3)
+        syncClient.diffAndSend(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch2"))
+    }
+
 }
