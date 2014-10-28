@@ -45,10 +45,7 @@ public class JsonConverter {
     }
 
     public class func asPatchMessage(jsonString: String) -> PatchMessage? {
-        var jsonErrorOptional: NSError?
-        let jsonOptional = NSJSONSerialization.JSONObjectWithData((jsonString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!,
-            options: NSJSONReadingOptions(0), error: &jsonErrorOptional) as? NSDictionary
-        if let dictionary = jsonOptional {
+        if let dictionary = asDictionary(jsonString) {
             let json = JSON(dictionary)
             let id = json["id"].string!
             let clientId = json["clientId"].string!
@@ -70,6 +67,12 @@ public class JsonConverter {
             return PatchMessage(id: id, clientId: clientId, edits: edits)
         }
         return Optional.None
+    }
+
+    private class func asDictionary(jsonString: String) -> NSDictionary? {
+        var jsonErrorOptional: NSError?
+        return NSJSONSerialization.JSONObjectWithData((jsonString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!,
+            options: NSJSONReadingOptions(0), error: &jsonErrorOptional) as? NSDictionary
     }
 
 }
