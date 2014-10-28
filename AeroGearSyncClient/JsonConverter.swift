@@ -11,10 +11,22 @@ import AeroGearSync
 
 public class JsonConverter {
 
+    /**
+    Converts a ClientDocument into a JSON String
+
+    :param: doc the ClientDocument to convert into JSON
+    :returns: the JSON representation of the ClientDocument
+    */
     public class func asJson<T>(doc: ClientDocument<T>) -> String {
         return "{\"msgType\": \"add\", \"id\": \"\(doc.id)\", \"clientId\": \"\(doc.clientId)\", \"content\": \"\(doc.content)\"}";
     }
 
+    /**
+    Converts a PatchMessage into a JSON String
+
+    :param: doc the ClientDocument to convert into JSON
+    :returns: the JSON representation of the PatchMessage
+    */
     public class func asJson(patchMsg: PatchMessage) -> String {
         var json = "{";
         json += "\"msgType\":\"patch\","
@@ -44,6 +56,12 @@ public class JsonConverter {
         return json
     }
 
+    /**
+    Converts a JSON respresentation of a PatchMessage into a PatchMessage object.
+
+    :param: jsonString the JSON respresentation of a PatchMessage
+    :returns: an optional PatchMessage object instance, or Optional.None if a conversion error occured
+    */
     public class func asPatchMessage(jsonString: String) -> PatchMessage? {
         if let dictionary = asDictionary(jsonString) {
             let json = JSON(dictionary)

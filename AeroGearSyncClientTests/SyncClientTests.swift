@@ -28,7 +28,7 @@ class SyncClientTests: XCTestCase {
         XCTAssertEqual("1234", added!.id)
         XCTAssertEqual("iosClient", added!.clientId)
         XCTAssertEqual("Fletch", added!.content)
-        syncClient.close()
+        syncClient.disconnect()
     }
     
     func testDiffAndSync() {
@@ -42,7 +42,7 @@ class SyncClientTests: XCTestCase {
         syncClient.connect().addDocument(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch"), callback)
         syncClient.diffAndSend(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch2"))
         waitForExpectationsWithTimeout(3.0, handler:nil)
-        syncClient.close()
+        syncClient.disconnect()
     }
 
 }
