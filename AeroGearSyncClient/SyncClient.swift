@@ -50,11 +50,15 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     }
     
     public func websocketDidReceiveMessage(text: String) {
-        println("Message: \(text)")
+        if let patchMessage = JsonConverter.asPatchMessage(text) {
+            syncEngine.patch(patchMessage)
+        } else {
+            println("Recieved none patchMessage: \(text)")
+        }
     }
-    
+
     public func websocketDidReceiveData(data: NSData) {
-        println("got some data: \(data.length)")
+        println("Message: \(data)")
     }
 
     public func addDocument(doc: ClientDocument<T>, callback: (ClientDocument<T>) -> ()) {

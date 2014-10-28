@@ -36,6 +36,12 @@ You can also run test from the command:
 
     xcodebuild -workspace AeroGearSyncClient.xcworkspace/ -scheme AeroGearSyncClient -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO test
 
+_Note_ At the moment the test require that the [AeroGear Differential Synchronization (DS) Server](https://github.com/danbev/aerogear-sync-server/tree/differential-synchronization).
+is running. If it is not en error message simliar to this will be displayed:
+```shell
+aerogear-ios-sync-client/AeroGearSyncClientTests/SyncClientTests.swift:44: error: -[AeroGearSyncClientTests.SyncClientTests testDiffAndSync] : Asynchronous wait failed: Exceeded timeout of 3 seconds, with unfulfilled expectations: "Callback should be invoked. Is the Sync Server running?".
+```
+
 
 
 

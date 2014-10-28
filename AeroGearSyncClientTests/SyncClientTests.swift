@@ -24,21 +24,25 @@ class SyncClientTests: XCTestCase {
         }
         syncClient.connect().addDocument(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch"), callback)
         sleep(3)
-        syncClient.close()
         let added = dataStore.getClientDocument("1234", clientId: "iosClient")
         XCTAssertEqual("1234", added!.id)
         XCTAssertEqual("iosClient", added!.clientId)
         XCTAssertEqual("Fletch", added!.content)
+        syncClient.close()
     }
     
     func testDiffAndSync() {
+        let expectation = expectationWithDescription("Callback should be invoked. Is the Sync Server running?")
+
         let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
         let callback = {(doc: ClientDocument<T>) -> () in
-            println ("Testing callback: received: \(doc)")
+            println("Testing callback: received: \(doc.content)")
+            expectation.fulfill()
         }
         syncClient.connect().addDocument(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch"), callback)
-        sleep(3)
         syncClient.diffAndSend(ClientDocument<T>(id: "1234", clientId: "iosClient", content: "Fletch2"))
+        waitForExpectationsWithTimeout(3.0, handler:nil)
+        syncClient.close()
     }
 
 }
