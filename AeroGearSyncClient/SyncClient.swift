@@ -99,7 +99,11 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     }
     
     public func websocketDidDisconnect(error: NSError?) {
-        println("Websocket is disconnected: \(error!.localizedDescription)")
+        if let err = error {
+            println("Websocket is disconnected with error: \(error!.localizedDescription)")
+        } else {
+            println("Websocket is disconnected")
+        }
     }
     
     public func websocketDidWriteError(error: NSError?) {
