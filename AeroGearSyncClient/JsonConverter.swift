@@ -94,4 +94,14 @@ public class JsonConverter {
             options: NSJSONReadingOptions(0), error: &jsonErrorOptional) as? Dictionary<String, AnyObject>
     }
 
+    /**
+    Tries to convert the passed in Dictionary<String, AnyObject> into a JSON String representation.
+
+    :param: the Dictionary<String, AnyObject> to try to convert.
+    :returns: optionally the JSON string representation for the dictionary.
+    */
+    public func asJsonString(dict: Json) -> String? {
+        return JSON(dict).description
+    }
+
 }
