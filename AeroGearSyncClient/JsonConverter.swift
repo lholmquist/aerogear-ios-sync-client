@@ -26,7 +26,7 @@ public class JsonConverter {
         } else if doc.content is String {
             dict["content"] = doc.content as String
         }
-        return JSON(dict).description
+        return JSON(dict).rawString(encoding: NSUTF8StringEncoding, options: nil)!
     }
 
     /**
@@ -48,7 +48,7 @@ public class JsonConverter {
             jsonEdits.append(edits)
         }
         json["edits"] = jsonEdits
-        return JSON(json).description
+        return JSON(json).rawString(encoding: NSUTF8StringEncoding, options: nil)!
     }
 
     /**
@@ -100,8 +100,8 @@ public class JsonConverter {
     :param: the Dictionary<String, AnyObject> to try to convert.
     :returns: optionally the JSON string representation for the dictionary.
     */
-    public func asJsonString(dict: Json) -> String? {
-        return JSON(dict).description
+    public func asJsonString(dict: Dictionary<String, AnyObject>) -> String? {
+        return JSON(dict).rawString(encoding: NSUTF8StringEncoding, options: nil)!
     }
 
 }
