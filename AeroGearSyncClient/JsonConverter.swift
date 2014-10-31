@@ -100,7 +100,7 @@ public class JsonConverter {
     :param: the Dictionary<String, AnyObject> to try to convert.
     :returns: optionally the JSON string representation for the dictionary.
     */
-    public func asJsonString(dict: Dictionary<String, AnyObject>) -> String? {
+    public class func asJsonString(dict: Dictionary<String, AnyObject>) -> String? {
         return JSON(dict).rawString(encoding: NSUTF8StringEncoding, options: nil)!
     }
 
