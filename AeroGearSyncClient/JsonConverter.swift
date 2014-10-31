@@ -11,49 +11,44 @@ import AeroGearSync
 
 public class JsonConverter {
 
+    public typealias Json = Dictionary<String, AnyObject>
+
     /**
-    Converts a ClientDocument into a JSON String
+    Returns a JSON add message type for the passed-in ClientDocument
 
     :param: doc the ClientDocument to convert into JSON
     :returns: the JSON representation of the ClientDocument
     */
-    public class func asJson<T>(doc: ClientDocument<T>) -> String {
-        return "{\"msgType\": \"add\", \"id\": \"\(doc.id)\", \"clientId\": \"\(doc.clientId)\", \"content\": \"\(doc.content)\"}";
+    public class func addMsgJson<T>(doc: ClientDocument<T>) -> String {
+        var dict: Json = ["msgType": "add", "id": doc.id, "clientId": doc.clientId]
+        if doc.content is Json {
+            dict["content"] = doc.content as Json
+        } else if doc.content is String {
+            dict["content"] = doc.content as String
+        }
+        return JSON(dict).description
     }
 
     /**
-    Converts a PatchMessage into a JSON String
+    Returns a JSON patch message type for the passed-in ClientDocument
 
     :param: doc the ClientDocument to convert into JSON
     :returns: the JSON representation of the PatchMessage
     */
-    public class func asJson(patchMsg: PatchMessage) -> String {
-        var json = "{";
-        json += "\"msgType\":\"patch\","
-        json += "\"clientId\":\"\(patchMsg.clientId)\""
-        json += ",\"id\":\"\(patchMsg.documentId)\""
-        json += ",\"edits\":["
-        let edits = patchMsg.edits
-        for edit in edits {
-            json += "{\"clientVersion\":\(edit.clientVersion)"
-            json += ",\"serverVersion\":\(edit.serverVersion)"
-            json += ",\"checksum\":\"\(edit.checksum)\""
-            json += ",\"diffs\":["
-            let diffs = edit.diffs
-            var i = 0;
-            for i = 0; i < diffs.count; i++ {
-                json += "{\"operation\":\"\(diffs[i].operation.rawValue)\""
-                json += ",\"text\":\"\(diffs[i].text)\"}"
-                if i != diffs.count-1 {
-                    json += ","
-                }
+    public class func patchMsgJson(patchMsg: PatchMessage) -> String {
+        var json: Json = ["msgType": "patch", "id": patchMsg.documentId, "clientId": patchMsg.clientId]
+        var jsonEdits: Array<Json> = Array()
+        for edit in patchMsg.edits {
+            var edits: Json = ["clientVersion": edit.clientVersion, "serverVersion": edit.serverVersion, "checksum": edit.checksum]
+            var diffs: Array<Json> = Array()
+            for diff in edit.diffs {
+                diffs.append(["operation": diff.operation.rawValue, "text": diff.text])
             }
-            json += "]"
-            json += "}"
+            edits["diffs"] = diffs
+            jsonEdits.append(edits)
         }
-        json += "]"
-        json += "}";
-        return json
+        json["edits"] = jsonEdits
+        return JSON(json).description
     }
 
     /**
@@ -63,8 +58,8 @@ public class JsonConverter {
     :returns: an optional PatchMessage object instance, or Optional.None if a conversion error occured
     */
     public class func asPatchMessage(jsonString: String) -> PatchMessage? {
-        if let dictionary = asDictionary(jsonString) {
-            let json = JSON(dictionary)
+        if let dict = asDictionary(jsonString) {
+            let json = JSON(dict)
             let id = json["id"].string!
             let clientId = json["clientId"].string!
             var edits = Array<Edit>()
@@ -87,10 +82,16 @@ public class JsonConverter {
         return Optional.None
     }
 
-    private class func asDictionary(jsonString: String) -> NSDictionary? {
+    /**
+    Tries to convert the passed in String into a Swift Dictionary<String, AnyObject>
+
+    :param: jsonString the JSON string to convert into a Dictionary
+    :returns: Optional Dictionary<String, AnyObject>
+    */
+    public class func asDictionary(jsonString: String) -> Dictionary<String, AnyObject>? {
         var jsonErrorOptional: NSError?
         return NSJSONSerialization.JSONObjectWithData((jsonString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!,
-            options: NSJSONReadingOptions(0), error: &jsonErrorOptional) as? NSDictionary
+            options: NSJSONReadingOptions(0), error: &jsonErrorOptional) as? Dictionary<String, AnyObject>
     }
 
 }

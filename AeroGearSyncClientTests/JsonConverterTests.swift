@@ -12,6 +12,8 @@ import AeroGearSync
 
 class JsonConverterTests: XCTestCase {
 
+    typealias Json = JsonConverter.Json
+
     let patchMessageJson =
             "{\"msgType\":\"patch\",\"clientId\":\"patchTest\",\"id\":\"1234\",\"edits\":[" +
                     "{\"clientVersion\":-1" +
@@ -24,13 +26,47 @@ class JsonConverterTests: XCTestCase {
                 "]" +
             "}"
 
-    func testAsJsonClientDocument() {
-        XCTAssertEqual("{\"msgType\": \"add\", \"id\": \"1234\", \"clientId\": \"jsonClient\", \"content\": \"Fletch\"}",
-            JsonConverter.asJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch")))
+    func testAddMsgJsonStringContent() {
+        let json = JsonConverter.addMsgJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch"))
+        let dict = JsonConverter.asDictionary(json)!
+        XCTAssertEqual(dict["msgType"] as String, "add")
+        XCTAssertEqual(dict["id"] as String, "1234")
+        XCTAssertEqual(dict["clientId"] as String, "jsonClient")
+        XCTAssertEqual(dict["content"] as String, "Fletch")
     }
 
-    func testAsJsonPatchMessage() {
-        XCTAssertEqual(patchMessageJson, JsonConverter.asJson(patchMessage()))
+    func testAddMsgJsonContent() {
+        let content = ["name": "Fletch"]
+        var json = JsonConverter.addMsgJson(ClientDocument<Json>(id: "1234", clientId: "jsonClient", content: content))
+        let dict = JsonConverter.asDictionary(json)!
+        XCTAssertEqual(dict["msgType"] as String, "add")
+        XCTAssertEqual(dict["id"] as String, "1234")
+        XCTAssertEqual(dict["clientId"] as String, "jsonClient")
+        let actualContent = dict["content"] as Json
+        XCTAssertEqual(actualContent["name"] as String, "Fletch")
+    }
+
+    func testPatchMsgJson() {
+        let json = JsonConverter.patchMsgJson(patchMessage())
+        let dict = JsonConverter.asDictionary(json)!
+
+        XCTAssertEqual(dict["msgType"] as String, "patch")
+        XCTAssertEqual(dict["id"] as String, "1234")
+        XCTAssertEqual(dict["clientId"] as String, "patchTest")
+
+        let edits = dict["edits"] as Array<Json>
+        XCTAssertEqual(edits.count, 1)
+        let edit = edits.first! as Json
+        XCTAssertEqual(edit["serverVersion"] as Int, 0)
+        XCTAssertEqual(edit["clientVersion"] as Int, -1)
+        XCTAssertEqual(edit["checksum"] as String, "")
+
+        let diffs = edit["diffs"] as Array<Json>
+        XCTAssertEqual(diffs.count, 2)
+        XCTAssertEqual(diffs[0]["operation"] as String, Edit.Operation.Unchanged.rawValue)
+        XCTAssertEqual(diffs[0]["text"] as String, "Fletch")
+        XCTAssertEqual(diffs[1]["operation"] as String, Edit.Operation.Add.rawValue)
+        XCTAssertEqual(diffs[1]["text"] as String, "2")
     }
 
     func testToPatchMessage() {

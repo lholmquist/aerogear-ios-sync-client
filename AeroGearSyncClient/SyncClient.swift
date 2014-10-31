@@ -62,7 +62,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     */
     public func addDocument(doc: ClientDocument<T>, callback: (ClientDocument<T>) -> ()) {
         syncEngine.addDocument(doc, callback: callback)
-        ws.writeString(JsonConverter.asJson(doc))
+        ws.writeString(JsonConverter.addMsgJson(doc))
     }
 
     /**
@@ -74,7 +74,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     */
     public func diffAndSend(doc: ClientDocument<T>) -> SyncClient {
         if let patchMessage = syncEngine.diff(doc) {
-            ws.writeString(JsonConverter.asJson(patchMessage))
+            ws.writeString(JsonConverter.patchMsgJson(patchMessage))
         }
         return self
     }
