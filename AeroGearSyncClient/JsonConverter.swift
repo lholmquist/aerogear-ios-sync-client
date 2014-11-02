@@ -36,19 +36,12 @@ public class JsonConverter {
     :returns: the JSON representation of the PatchMessage
     */
     public class func patchMsgJson(patchMsg: PatchMessage) -> String {
-        var json: Json = ["msgType": "patch", "id": patchMsg.documentId, "clientId": patchMsg.clientId]
-        var jsonEdits: Array<Json> = Array()
-        for edit in patchMsg.edits {
-            var edits: Json = ["clientVersion": edit.clientVersion, "serverVersion": edit.serverVersion, "checksum": edit.checksum]
-            var diffs: Array<Json> = Array()
-            for diff in edit.diffs {
-                diffs.append(["operation": diff.operation.rawValue, "text": diff.text])
+        return JSON(["msgType": "patch", "id": patchMsg.documentId, "clientId": patchMsg.clientId,
+            "edits": patchMsg.edits.map {
+                ["clientVersion": $0.clientVersion, "serverVersion": $0.serverVersion, "checksum": $0.checksum,
+                    "diffs": $0.diffs.map { ["operation": $0.operation.rawValue, "text": $0.text] } ]
             }
-            edits["diffs"] = diffs
-            jsonEdits.append(edits)
-        }
-        json["edits"] = jsonEdits
-        return JSON(json).rawString(encoding: NSUTF8StringEncoding, options: nil)!
+        ]).rawString(encoding: NSUTF8StringEncoding, options: nil)!
     }
 
     /**
