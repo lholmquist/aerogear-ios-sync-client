@@ -74,7 +74,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     */
     public func diffAndSend(doc: ClientDocument<T>) -> Self {
         if let patchMessage = syncEngine.diff(doc) {
-            ws.writeString(JsonConverter.patchMsgJson(patchMessage))
+            ws.writeString(JsonConverter.patchMsgAsJson(patchMessage))
         }
         return self
     }

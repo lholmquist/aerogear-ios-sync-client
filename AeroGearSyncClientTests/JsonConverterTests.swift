@@ -14,17 +14,15 @@ class JsonConverterTests: XCTestCase {
 
     typealias Json = JsonConverter.Json
 
-    let patchMessageJson =
-            "{\"msgType\":\"patch\",\"clientId\":\"patchTest\",\"id\":\"1234\",\"edits\":[" +
-                    "{\"clientVersion\":-1" +
-                    ",\"serverVersion\":0" +
-                    ",\"checksum\":\"\"" +
-                    ",\"diffs\":[" +
-                        "{\"operation\":\"UNCHANGED\",\"text\":\"Fletch\"}," +
-                        "{\"operation\":\"ADD\",\"text\":\"2\"}" +
-                    "]}" +
-                "]" +
-            "}"
+    let patchJson : Json = [
+        "msgType": "patch", "clientId": "patchTest", "id": "1234",
+        "edits": [[
+            "clientVersion": -1,
+            "serverVersion": 0,
+            "checksum": "",
+            "diffs": [["operation": "UNCHANGED", "text": "Fletch"], ["operation": "ADD", "text": "2"]]
+        ]]
+    ]
 
     func testAddMsgJsonStringContent() {
         let json = JsonConverter.addMsgJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch"))
@@ -47,7 +45,7 @@ class JsonConverterTests: XCTestCase {
     }
 
     func testPatchMsgJson() {
-        let json = JsonConverter.patchMsgJson(patchMessage())
+        let json = JsonConverter.patchMsgAsJson(patchMessage())
         let dict = JsonConverter.asDictionary(json)!
 
         XCTAssertEqual(dict["msgType"] as String, "patch")
@@ -71,7 +69,7 @@ class JsonConverterTests: XCTestCase {
 
     func testToPatchMessage() {
         let expected = patchMessage()
-        let actual = JsonConverter.asPatchMessage(patchMessageJson)!
+        let actual = JsonConverter.asPatchMessage(JsonConverter.asJsonString(patchJson)!)!
         XCTAssertEqual(expected.documentId, actual.documentId)
         XCTAssertEqual(expected.clientId, actual.clientId)
         XCTAssertEqual(expected.edits.count, actual.edits.count)

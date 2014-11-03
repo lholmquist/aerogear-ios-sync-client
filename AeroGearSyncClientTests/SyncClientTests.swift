@@ -19,12 +19,13 @@ class SyncClientTests: XCTestCase {
 
     func testAddDocument() {
         let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
-        let content = "{\"name\": \"Fletch\"}"
+        let id = NSUUID().UUIDString
+        let content = JsonConverter.asJsonString(["name": "Fletch"])!
         let callback = {(doc: ClientDocument<T>) -> () in }
-        syncClient.connect().addDocument(ClientDocument<T>(id: "1234", clientId: "iosClient", content: content), callback)
+        syncClient.connect().addDocument(ClientDocument<T>(id: id, clientId: "iosClient", content: content), callback)
         sleep(3)
-        let added = dataStore.getClientDocument("1234", clientId: "iosClient")
-        XCTAssertEqual("1234", added!.id)
+        let added = dataStore.getClientDocument(id, clientId: "iosClient")
+        XCTAssertEqual(id, added!.id)
         XCTAssertEqual("iosClient", added!.clientId)
         XCTAssertEqual(content, added!.content)
         syncClient.disconnect()
@@ -34,8 +35,8 @@ class SyncClientTests: XCTestCase {
         let expectation = expectationWithDescription("Callback should be invoked. Is the Sync Server running?")
         let id = NSUUID().UUIDString
 
-        let content = "{\"name\": \"Fletch\"}"
-        let update = "{\"name\": \"Fletch2\"}"
+        let content = JsonConverter.asJsonString(["name": "Fletch"])!
+        let update = JsonConverter.asJsonString(["name": "Fletch2"])!
         let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
         let callback = {(doc: ClientDocument<T>) -> () in
             println("Testing callback: received: \(doc.content)")

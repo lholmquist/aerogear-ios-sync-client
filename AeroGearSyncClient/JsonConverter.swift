@@ -35,7 +35,7 @@ public class JsonConverter {
     :param: doc the ClientDocument to convert into JSON
     :returns: the JSON representation of the PatchMessage
     */
-    public class func patchMsgJson(patchMsg: PatchMessage) -> String {
+    public class func patchMsgAsJson(patchMsg: PatchMessage) -> String {
         return JSON(["msgType": "patch", "id": patchMsg.documentId, "clientId": patchMsg.clientId,
             "edits": patchMsg.edits.map {
                 ["clientVersion": $0.clientVersion, "serverVersion": $0.serverVersion, "checksum": $0.checksum,
