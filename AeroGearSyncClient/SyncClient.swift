@@ -49,7 +49,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
 
     :returns: self to support method chaining
     */
-    public func connect() -> SyncClient {
+    public func connect() -> Self {
         ws.connect()
         return self
     }
@@ -72,7 +72,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     :param: doc the ClientDocument with updates to be diffed
     :returns: self to support method chaining
     */
-    public func diffAndSend(doc: ClientDocument<T>) -> SyncClient {
+    public func diffAndSend(doc: ClientDocument<T>) -> Self {
         if let patchMessage = syncEngine.diff(doc) {
             ws.writeString(JsonConverter.patchMsgJson(patchMessage))
         }
