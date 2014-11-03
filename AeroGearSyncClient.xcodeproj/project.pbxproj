@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
+		C572CBD71A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */; };
 		C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5755DA219FE37780098B6B2 /* Starscream.framework */; };
 		C5755DC119FE5BD60098B6B2 /* JsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */; };
 		C5755DCB19FE5CB90098B6B2 /* JsonConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5755DCA19FE5CB90098B6B2 /* JsonConverterTests.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
+		C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDiffMatchPatchSynchronizer.swift; sourceTree = "<group>"; };
 		C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
 		C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConverter.swift; sourceTree = "<group>"; };
 		C5755DCA19FE5CB90098B6B2 /* JsonConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConverterTests.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				C587E6DD19D047370098638A /* SyncClient.swift */,
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
 				C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */,
+				C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */,
 			);
 			path = AeroGearSyncClient;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C572CBD71A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift in Sources */,
 				C5755DC119FE5BD60098B6B2 /* JsonConverter.swift in Sources */,
 				C587E6DE19D047370098638A /* SyncClient.swift in Sources */,
 			);

@@ -5,29 +5,29 @@ import AeroGearSync
 
 class SyncClientTests: XCTestCase {
     
-    typealias T = String
+    typealias T = JsonConverter.Json
     var dataStore: InMemoryDataStore<T>!
-    var synchonizer: DiffMatchPatchSynchronizer!
-    var engine: ClientSyncEngine<DiffMatchPatchSynchronizer, InMemoryDataStore<T>>!
+    var synchonizer: JsonDiffMatchPatchSynchronizer!
+    var engine: ClientSyncEngine<JsonDiffMatchPatchSynchronizer, InMemoryDataStore<T>>!
 
     override func setUp() {
         super.setUp()
         self.dataStore = InMemoryDataStore()
-        self.synchonizer = DiffMatchPatchSynchronizer()
+        self.synchonizer = JsonDiffMatchPatchSynchronizer()
         self.engine = ClientSyncEngine(synchronizer: synchonizer, dataStore: dataStore)
     }
 
     func testAddDocument() {
         let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
         let id = NSUUID().UUIDString
-        let content = JsonConverter.asJsonString(["name": "Fletch"])!
+        let content = ["name": "Fletch"]
         let callback = {(doc: ClientDocument<T>) -> () in }
         syncClient.connect().addDocument(ClientDocument<T>(id: id, clientId: "iosClient", content: content), callback)
         sleep(3)
         let added = dataStore.getClientDocument(id, clientId: "iosClient")
         XCTAssertEqual(id, added!.id)
         XCTAssertEqual("iosClient", added!.clientId)
-        XCTAssertEqual(content, added!.content)
+        XCTAssertEqual(content["name"]! as String, added!.content["name"] as String)
         syncClient.disconnect()
     }
     
@@ -35,13 +35,12 @@ class SyncClientTests: XCTestCase {
         let expectation = expectationWithDescription("Callback should be invoked. Is the Sync Server running?")
         let id = NSUUID().UUIDString
 
-        let content = JsonConverter.asJsonString(["name": "Fletch"])!
-        let update = JsonConverter.asJsonString(["name": "Fletch2"])!
+        let content = ["name": "Fletch"]
+        let update = ["name": "Fletch2"]
         let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
         let callback = {(doc: ClientDocument<T>) -> () in
             println("Testing callback: received: \(doc.content)")
-            let content = JsonConverter.asDictionary(doc.content)!
-            XCTAssertEqual(content["name"] as String, "Fletch2")
+            XCTAssertEqual(doc.content["name"]! as String, "Fletch2")
             expectation.fulfill()
         }
         syncClient.connect().addDocument(ClientDocument<T>(id: id, clientId: "iosClient", content: content), callback)
