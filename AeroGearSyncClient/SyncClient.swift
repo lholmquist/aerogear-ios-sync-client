@@ -6,21 +6,23 @@ import Starscream
 /**
 * A Differential Synchronization client that uses the WebSocket as the transport protocol.
 */
-public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: WebsocketDelegate {
+public class SyncClient<CS:ClientSynchronizer, D:DataStore, S:ContentSerializer where CS.T == D.T, CS.T == S.T>: WebsocketDelegate {
 
     typealias T = CS.T
     var ws: Websocket!
     var documents = Dictionary<String, ClientDocument<T>>()
     let syncEngine: ClientSyncEngine<CS, D>
+    let contentSerializer: S
 
     /**
     Initializes a SyncClient.
 
     :param: url the URL of the sync server
     :param: syncEngine the ClientSyncEngine to be used by this SyncClient
+    :param: contentSerializer a concrete ContentSerializer that allows for control of serializing the document content
     */
-    public convenience init(url: String, syncEngine: ClientSyncEngine<CS, D>) {
-        self.init(url: url, optionalProtocols: Optional.None, syncEngine: syncEngine)
+    public convenience init(url: String, syncEngine: ClientSyncEngine<CS, D>, contentSerializer: S) {
+        self.init(url: url, optionalProtocols: Optional.None, syncEngine: syncEngine, contentSerializer: contentSerializer)
     }
 
     /**
@@ -29,13 +31,15 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     :param: url the URL of the sync server
     :param: protocols optional WebSocket protocols that the underlying WebSocket should use.
     :param: syncEngine the ClientSyncEngine to be used by this SyncClient
+    :param: contentSerializer a concrete ContentSerializer that allows for control of serializing the document content
     */
-    public convenience init(url: String, protocols: Array<String>, syncEngine: ClientSyncEngine<CS, D>) {
-        self.init(url: url, optionalProtocols: protocols, syncEngine: syncEngine)
+    public convenience init(url: String, protocols: Array<String>, syncEngine: ClientSyncEngine<CS, D>, contentSerializer: S) {
+        self.init(url: url, optionalProtocols: protocols, syncEngine: syncEngine, contentSerializer: contentSerializer)
     }
 
-    private init(url: String, optionalProtocols: Array<String>?, syncEngine: ClientSyncEngine<CS, D>) {
+    private init(url: String, optionalProtocols: Array<String>?, syncEngine: ClientSyncEngine<CS, D>, contentSerializer: S) {
         self.syncEngine = syncEngine
+        self.contentSerializer = contentSerializer
         if let protocols = optionalProtocols {
             ws = Websocket(url: NSURL(string: url)!, protocols: protocols)
         } else {
@@ -62,7 +66,7 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore where CS.T == D.T>: W
     */
     public func addDocument(doc: ClientDocument<T>, callback: (ClientDocument<T>) -> ()) {
         syncEngine.addDocument(doc, callback: callback)
-        ws.writeString(JsonConverter.addMsgJson(doc))
+        ws.writeString(JsonConverter.addMsgJson(doc, serializer: contentSerializer))
     }
 
     /**

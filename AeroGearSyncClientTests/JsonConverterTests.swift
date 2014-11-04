@@ -24,8 +24,23 @@ class JsonConverterTests: XCTestCase {
         ]]
     ]
 
+    class StringContentSerializer : ContentSerializer {
+        func asString(content: String) -> String {
+            return content
+        }
+    }
+    class JsonContentSerializer : ContentSerializer {
+        func asString(content: Json) -> String {
+            return JsonConverter.asJsonString(content)!
+        }
+    }
+    let stringContentSerializer = StringContentSerializer()
+    let jsonContentSerializer = JsonContentSerializer()
+
+
     func testAddMsgJsonStringContent() {
-        let json = JsonConverter.addMsgJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch"))
+        let json = JsonConverter.addMsgJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch"), serializer: stringContentSerializer)
+        println(json)
         let dict = JsonConverter.asDictionary(json)!
         XCTAssertEqual(dict["msgType"] as String, "add")
         XCTAssertEqual(dict["id"] as String, "1234")
@@ -35,7 +50,7 @@ class JsonConverterTests: XCTestCase {
 
     func testAddMsgJsonContent() {
         let content = ["name": "Fletch"]
-        var json = JsonConverter.addMsgJson(ClientDocument<Json>(id: "1234", clientId: "jsonClient", content: content))
+        var json = JsonConverter.addMsgJson(ClientDocument<Json>(id: "1234", clientId: "jsonClient", content: content), serializer: jsonContentSerializer)
         let dict = JsonConverter.asDictionary(json)!
         XCTAssertEqual(dict["msgType"] as String, "add")
         XCTAssertEqual(dict["id"] as String, "1234")

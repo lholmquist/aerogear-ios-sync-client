@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5060C571A08EB4C004CF512 /* ContentSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5060C561A08EB4C004CF512 /* ContentSerializer.swift */; };
+		C5060C631A08EDE1004CF512 /* JsonContentSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5060C621A08EDE1004CF512 /* JsonContentSerializer.swift */; };
 		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
 		C572CBD71A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */; };
 		C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5755DA219FE37780098B6B2 /* Starscream.framework */; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5060C561A08EB4C004CF512 /* ContentSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSerializer.swift; sourceTree = "<group>"; };
+		C5060C621A08EDE1004CF512 /* JsonContentSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonContentSerializer.swift; sourceTree = "<group>"; };
 		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
 		C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDiffMatchPatchSynchronizer.swift; sourceTree = "<group>"; };
 		C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
 				C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */,
 				C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */,
+				C5060C561A08EB4C004CF512 /* ContentSerializer.swift */,
+				C5060C621A08EDE1004CF512 /* JsonContentSerializer.swift */,
 			);
 			path = AeroGearSyncClient;
 			sourceTree = "<group>";
@@ -401,6 +407,8 @@
 				C572CBD71A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift in Sources */,
 				C5755DC119FE5BD60098B6B2 /* JsonConverter.swift in Sources */,
 				C587E6DE19D047370098638A /* SyncClient.swift in Sources */,
+				C5060C571A08EB4C004CF512 /* ContentSerializer.swift in Sources */,
+				C5060C631A08EDE1004CF512 /* JsonContentSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

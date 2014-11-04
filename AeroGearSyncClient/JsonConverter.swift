@@ -19,7 +19,7 @@ public class JsonConverter {
     :param: doc the ClientDocument to convert into JSON
     :returns: the JSON representation of the ClientDocument
     */
-    public class func addMsgJson<T>(doc: ClientDocument<T>) -> String {
+    public class func addMsgJson<T, S:ContentSerializer where T == S.T>(doc: ClientDocument<T>, serializer: S) -> String {
         var dict: Json = ["msgType": "add", "id": doc.id, "clientId": doc.clientId]
         if doc.content is Json {
             dict["content"] = doc.content as Json

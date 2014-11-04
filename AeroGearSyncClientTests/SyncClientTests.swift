@@ -10,6 +10,19 @@ class SyncClientTests: XCTestCase {
     var synchonizer: JsonDiffMatchPatchSynchronizer!
     var engine: ClientSyncEngine<JsonDiffMatchPatchSynchronizer, InMemoryDataStore<T>>!
 
+    class StringContentSerializer : ContentSerializer {
+        func asString(content: String) -> String {
+            return content
+        }
+    }
+    class JsonContentSerializer : ContentSerializer {
+        func asString(content: T) -> String {
+            return JsonConverter.asJsonString(content)!
+        }
+    }
+    let stringContentSerializer = StringContentSerializer()
+    let jsonContentSerializer = JsonContentSerializer()
+
     override func setUp() {
         super.setUp()
         self.dataStore = InMemoryDataStore()
@@ -18,7 +31,7 @@ class SyncClientTests: XCTestCase {
     }
 
     func testAddDocument() {
-        let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
+        let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine, contentSerializer: jsonContentSerializer)
         let id = NSUUID().UUIDString
         let content = ["name": "Fletch"]
         let callback = {(doc: ClientDocument<T>) -> () in }
@@ -37,7 +50,7 @@ class SyncClientTests: XCTestCase {
 
         let content = ["name": "Fletch"]
         let update = ["name": "Fletch2"]
-        let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine)
+        let syncClient = SyncClient(url: "http://localhost:7777/sync", syncEngine: engine, contentSerializer: jsonContentSerializer)
         let callback = {(doc: ClientDocument<T>) -> () in
             println("Testing callback: received: \(doc.content)")
             XCTAssertEqual(doc.content["name"]! as String, "Fletch2")
