@@ -55,8 +55,7 @@ class JsonConverterTests: XCTestCase {
         XCTAssertEqual(dict["msgType"] as String, "add")
         XCTAssertEqual(dict["id"] as String, "1234")
         XCTAssertEqual(dict["clientId"] as String, "jsonClient")
-        let actualContent = dict["content"] as Json
-        XCTAssertEqual(actualContent["name"] as String, "Fletch")
+        XCTAssertEqual(dict["content"] as String, "{\"name\":\"Fletch\"}")
     }
 
     func testPatchMsgJson() {
