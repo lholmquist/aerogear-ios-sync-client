@@ -26,7 +26,7 @@ class JsonConverterTests: XCTestCase {
 
     class StringContentSerializer : ContentSerializer {
         func asString(content: String) -> String {
-            return content
+            return "\"" + content + "\""
         }
     }
     class JsonContentSerializer : ContentSerializer {
@@ -40,7 +40,6 @@ class JsonConverterTests: XCTestCase {
 
     func testAddMsgJsonStringContent() {
         let json = JsonConverter.addMsgJson(ClientDocument<String>(id: "1234", clientId: "jsonClient", content: "Fletch"), serializer: stringContentSerializer)
-        println(json)
         let dict = JsonConverter.asDictionary(json)!
         XCTAssertEqual(dict["msgType"] as String, "add")
         XCTAssertEqual(dict["id"] as String, "1234")
@@ -55,7 +54,8 @@ class JsonConverterTests: XCTestCase {
         XCTAssertEqual(dict["msgType"] as String, "add")
         XCTAssertEqual(dict["id"] as String, "1234")
         XCTAssertEqual(dict["clientId"] as String, "jsonClient")
-        XCTAssertEqual(dict["content"] as String, "{\"name\":\"Fletch\"}")
+        let convertedContent = dict["content"] as Json
+        XCTAssertEqual(convertedContent["name"] as String, "Fletch")
     }
 
     func testPatchMsgJson() {

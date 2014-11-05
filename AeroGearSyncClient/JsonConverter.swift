@@ -20,9 +20,10 @@ public class JsonConverter {
     :returns: the JSON representation of the ClientDocument
     */
     public class func addMsgJson<T, S:ContentSerializer where T == S.T>(doc: ClientDocument<T>, serializer: S) -> String {
-        var dict: Json = ["msgType": "add", "id": doc.id, "clientId": doc.clientId]
-        dict["content"] = serializer.asString(doc.content)
-        return JSON(dict).rawString(encoding: NSUTF8StringEncoding, options: nil)!
+        var str = "{\"msgType\":\"add\",\"id\":\"" + doc.id + "\",\"clientId\":\"" + doc.clientId + "\""
+        str += ",\"content\":" + serializer.asString(doc.content)
+        str += "}"
+        return str
     }
 
     /**
@@ -32,12 +33,27 @@ public class JsonConverter {
     :returns: the JSON representation of the PatchMessage
     */
     public class func patchMsgAsJson(patchMsg: PatchMessage) -> String {
-        return JSON(["msgType": "patch", "id": patchMsg.documentId, "clientId": patchMsg.clientId,
-            "edits": patchMsg.edits.map {
-                ["clientVersion": $0.clientVersion, "serverVersion": $0.serverVersion, "checksum": $0.checksum,
-                    "diffs": $0.diffs.map { ["operation": $0.operation.rawValue, "text": $0.text] } ]
+        // TODO: This should be solved on the server side.
+        var str = "{\"msgType\":\"patch\",\"id\":\"" + patchMsg.documentId + "\",\"clientId\":\"" + patchMsg.clientId + "\""
+        str += ",\"edits\":["
+        let count = patchMsg.edits.count-1
+        for i in 0...count {
+            let edit = patchMsg.edits[i]
+            str += "{\"clientVersion\":\(edit.clientVersion)"
+            str += ",\"serverVersion\":\(edit.serverVersion)"
+            str += ",\"checksum\":\"\(edit.checksum)"
+            str += "\",\"diffs\":["
+            let diffscount = edit.diffs.count-1
+            for y in 0...diffscount {
+                let text = edit.diffs[y].text.stringByReplacingOccurrencesOfString("\"", withString: "\\\"", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                str += "{\"operation\":\"" + edit.diffs[y].operation.rawValue + "\",\"text\":\"" + text + "\"}"
+                if y != diffscount {
+                    str += ","
+                }
             }
-        ]).rawString(encoding: NSUTF8StringEncoding, options: nil)!
+            str += "]}]}"
+        }
+        return str
     }
 
     /**
@@ -64,7 +80,6 @@ public class JsonConverter {
                     serverVersion: jsonEdit["serverVersion"].number! as Int,
                     checksum: jsonEdit["checksum"].string!,
                     diffs: diffs))
-
             }
             return PatchMessage(id: id, clientId: clientId, edits: edits)
         }
