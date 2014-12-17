@@ -18,7 +18,7 @@ This project is also a Cocoapod and can be pushed to the Cocoapods specs reposit
 Currently we are using a private/local Cocoapods repo before publishing the real ones. This is only for testing. Please
 follow the instructions [here](https://github.com/danbev/Cocoapods-repo) to set up a local repo.
 
-    bundle exec pod spec lint AeroGearSync.podspec --sources='$HOME/.cocoapods/repos/local' --verbose --allow-warnings
+    bundle exec pod spec lint AeroGearSyncClient.podspec --sources='$HOME/.cocoapods/repos/local' --verbose --allow-warnings
 
 ## Building
 
