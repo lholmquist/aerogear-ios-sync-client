@@ -9,7 +9,7 @@
 #ifndef AeroGearSyncClient_AeroGearSyncClient_Bridging_Header_h
 #define AeroGearSyncClient_AeroGearSyncClient_Bridging_Header_h
 
-#import "SwiftyJSON/SwiftyJSON.h"
+//#import "SwiftyJSON/SwiftyJSON.h"
 
 
 #endif

@@ -8,6 +8,7 @@
 
 import Foundation
 import AeroGearSync
+import SwiftyJSON
 
 public class JsonConverter {
 
