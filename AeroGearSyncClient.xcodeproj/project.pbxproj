@@ -7,62 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10865DD76FA578C589231919 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DC1BF4DB3FF5D5D0F8C8AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A89B77C1A3064D368B50FEB /* Pods_AeroGearSyncClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A2A3A26651D30D32EEB85 /* Pods_AeroGearSyncClientTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C5060C571A08EB4C004CF512 /* ContentSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5060C561A08EB4C004CF512 /* ContentSerializer.swift */; };
 		C5060C631A08EDE1004CF512 /* JsonContentSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5060C621A08EDE1004CF512 /* JsonContentSerializer.swift */; };
-		C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */; };
 		C572CBD71A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */; };
-		C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5755DA219FE37780098B6B2 /* Starscream.framework */; };
 		C5755DC119FE5BD60098B6B2 /* JsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */; };
 		C5755DCB19FE5CB90098B6B2 /* JsonConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5755DCA19FE5CB90098B6B2 /* JsonConverterTests.swift */; };
 		C587E6D419D0460E0098638A /* SyncClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6D319D0460E0098638A /* SyncClientTests.swift */; };
 		C587E6DE19D047370098638A /* SyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587E6DD19D047370098638A /* SyncClient.swift */; };
 		C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */; };
-		C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C50E2CBC19D30D9300C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 488B6B5C196B19BC000297C9;
-			remoteInfo = AeroGearSync;
-		};
-		C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 488B6B67196B19BC000297C9;
-			remoteInfo = AeroGearSyncTests;
-		};
-		C5755DA119FE37780098B6B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6B3E79E619D48B7F006071F7;
-			remoteInfo = Starscream;
-		};
-		C5755DA319FE37780098B6B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6B3E79F119D48B7F006071F7;
-			remoteInfo = StarscreamTests;
-		};
-		C5755DA519FE37780098B6B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9C3E35F19E48FF1009FC285;
-			remoteInfo = StarscreamOSX;
-		};
-		C5755DA719FE37780098B6B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9C3E36919E48FF1009FC285;
-			remoteInfo = StarscreamOSXTests;
-		};
 		C587E6E719D16A610098638A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C587E6BB19D0460E0098638A /* Project object */;
@@ -70,28 +27,15 @@
 			remoteGlobalIDString = C587E6C319D0460E0098638A;
 			remoteInfo = AeroGearSyncClient;
 		};
-		C5C56DCC19D2EEC7000AF339 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
-			remoteInfo = SwiftyJSON;
-		};
-		C5C56DCE19D2EEC7000AF339 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E4FEFE619575BE100351305;
-			remoteInfo = SwiftyJSONTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		195C824E2333CDFC03C57A7C /* Pods-AeroGearSyncClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGearSyncClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AeroGearSyncClientTests/Pods-AeroGearSyncClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		A47A2A3A26651D30D32EEB85 /* Pods_AeroGearSyncClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AeroGearSyncClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4BA6597FEEB8C1D617F2D89 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5060C561A08EB4C004CF512 /* ContentSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSerializer.swift; sourceTree = "<group>"; };
 		C5060C621A08EDE1004CF512 /* JsonContentSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonContentSerializer.swift; sourceTree = "<group>"; };
-		C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AeroGearSync.xcodeproj; path = "aerogear-ios-sync/AeroGearSync.xcodeproj"; sourceTree = "<group>"; };
 		C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDiffMatchPatchSynchronizer.swift; sourceTree = "<group>"; };
-		C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
 		C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConverter.swift; sourceTree = "<group>"; };
 		C5755DCA19FE5CB90098B6B2 /* JsonConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConverterTests.swift; sourceTree = "<group>"; };
 		C587E6C419D0460E0098638A /* AeroGearSyncClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AeroGearSyncClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +45,9 @@
 		C587E6D319D0460E0098638A /* SyncClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncClientTests.swift; sourceTree = "<group>"; };
 		C587E6DD19D047370098638A /* SyncClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncClient.swift; sourceTree = "<group>"; };
 		C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AeroGearSyncClient-Bridging-Header.h"; sourceTree = "<group>"; };
-		C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
+		DAB5474F59226304787C14DE /* Pods-AeroGearSyncClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGearSyncClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AeroGearSyncClientTests/Pods-AeroGearSyncClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1DC1BF4DB3FF5D5D0F8C8AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9639445BD238432ADEA0D85 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5755DA919FE37930098B6B2 /* Starscream.framework in Frameworks */,
-				C50E2CC119D30D9E00C3D5FD /* AeroGearSync.framework in Frameworks */,
-				C5C56DD419D2EEE9000AF339 /* SwiftyJSON.framework in Frameworks */,
+				10865DD76FA578C589231919 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587E6EE19D16DCA0098638A /* AeroGearSyncClient.framework in Frameworks */,
+				1A89B77C1A3064D368B50FEB /* Pods_AeroGearSyncClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,40 +74,31 @@
 		70C301C609F74EEDB65B5F7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1DC1BF4DB3FF5D5D0F8C8AB /* Pods.framework */,
+				A47A2A3A26651D30D32EEB85 /* Pods_AeroGearSyncClientTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C50E2CB719D30D9300C3D5FD /* Products */ = {
+		86B59957B34B2DF4AB41BFAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */,
-				C50E2CBF19D30D9300C3D5FD /* AeroGearSyncTests.xctest */,
+				B4BA6597FEEB8C1D617F2D89 /* Pods.debug.xcconfig */,
+				F9639445BD238432ADEA0D85 /* Pods.release.xcconfig */,
+				DAB5474F59226304787C14DE /* Pods-AeroGearSyncClientTests.debug.xcconfig */,
+				195C824E2333CDFC03C57A7C /* Pods-AeroGearSyncClientTests.release.xcconfig */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C5755D9B19FE37780098B6B2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5755DA219FE37780098B6B2 /* Starscream.framework */,
-				C5755DA419FE37780098B6B2 /* StarscreamTests.xctest */,
-				C5755DA619FE37780098B6B2 /* StarscreamOSX.framework */,
-				C5755DA819FE37780098B6B2 /* StarscreamOSXTests.xctest */,
-			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		C587E6BA19D0460E0098638A = {
 			isa = PBXGroup;
 			children = (
-				C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */,
-				C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */,
-				C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */,
 				C587E6C619D0460E0098638A /* AeroGearSyncClient */,
 				C587E6D019D0460E0098638A /* AeroGearSyncClientTests */,
 				C587E6C519D0460E0098638A /* Products */,
 				70C301C609F74EEDB65B5F7F /* Frameworks */,
+				86B59957B34B2DF4AB41BFAA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,15 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C5C56DC419D2EEC7000AF339 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */,
-				C5C56DCF19D2EEC7000AF339 /* SwiftyJSONTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -241,10 +168,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C587E6D719D0460E0098638A /* Build configuration list for PBXNativeTarget "AeroGearSyncClient" */;
 			buildPhases = (
+				B2950029F81332CF40A2CFF9 /* Check Pods Manifest.lock */,
 				C587E6BF19D0460E0098638A /* Sources */,
 				C587E6C019D0460E0098638A /* Frameworks */,
 				C587E6C119D0460E0098638A /* Headers */,
 				C587E6C219D0460E0098638A /* Resources */,
+				BCFA85DEC9E9EF489F65B6BD /* Embed Pods Frameworks */,
+				49BCB15EF76AEDA2322382B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C587E6DA19D0460E0098638A /* Build configuration list for PBXNativeTarget "AeroGearSyncClientTests" */;
 			buildPhases = (
+				B0C9ED886AE9498409514A7A /* Check Pods Manifest.lock */,
 				C587E6CB19D0460E0098638A /* Sources */,
 				C587E6CC19D0460E0098638A /* Frameworks */,
 				C587E6CD19D0460E0098638A /* Resources */,
+				145EF4F99B2726080E53FD4D /* Embed Pods Frameworks */,
+				1C802B337B349D3C0C003D38 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,20 +234,6 @@
 			mainGroup = C587E6BA19D0460E0098638A;
 			productRefGroup = C587E6C519D0460E0098638A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C50E2CB719D30D9300C3D5FD /* Products */;
-					ProjectRef = C50E2CB619D30D9300C3D5FD /* AeroGearSync.xcodeproj */;
-				},
-				{
-					ProductGroup = C5755D9B19FE37780098B6B2 /* Products */;
-					ProjectRef = C5755D9A19FE37780098B6B2 /* Starscream.xcodeproj */;
-				},
-				{
-					ProductGroup = C5C56DC419D2EEC7000AF339 /* Products */;
-					ProjectRef = C5C56DC319D2EEC7000AF339 /* SwiftyJSON.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C587E6C319D0460E0098638A /* AeroGearSyncClient */,
@@ -322,65 +241,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C50E2CBD19D30D9300C3D5FD /* AeroGearSync.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AeroGearSync.framework;
-			remoteRef = C50E2CBC19D30D9300C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C50E2CBF19D30D9300C3D5FD /* AeroGearSyncTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AeroGearSyncTests.xctest;
-			remoteRef = C50E2CBE19D30D9300C3D5FD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5755DA219FE37780098B6B2 /* Starscream.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Starscream.framework;
-			remoteRef = C5755DA119FE37780098B6B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5755DA419FE37780098B6B2 /* StarscreamTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = StarscreamTests.xctest;
-			remoteRef = C5755DA319FE37780098B6B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5755DA619FE37780098B6B2 /* StarscreamOSX.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = StarscreamOSX.framework;
-			remoteRef = C5755DA519FE37780098B6B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5755DA819FE37780098B6B2 /* StarscreamOSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = StarscreamOSXTests.xctest;
-			remoteRef = C5755DA719FE37780098B6B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5C56DCD19D2EEC7000AF339 /* SwiftyJSON.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyJSON.framework;
-			remoteRef = C5C56DCC19D2EEC7000AF339 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C5C56DCF19D2EEC7000AF339 /* SwiftyJSONTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftyJSONTests.xctest;
-			remoteRef = C5C56DCE19D2EEC7000AF339 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C587E6C219D0460E0098638A /* Resources */ = {
@@ -398,6 +258,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		145EF4F99B2726080E53FD4D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AeroGearSyncClientTests/Pods-AeroGearSyncClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C802B337B349D3C0C003D38 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AeroGearSyncClientTests/Pods-AeroGearSyncClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49BCB15EF76AEDA2322382B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0C9ED886AE9498409514A7A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2950029F81332CF40A2CFF9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BCFA85DEC9E9EF489F65B6BD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C587E6BF19D0460E0098638A /* Sources */ = {
@@ -519,6 +472,7 @@
 		};
 		C587E6D819D0460E0098638A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4BA6597FEEB8C1D617F2D89 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -539,6 +493,7 @@
 		};
 		C587E6D919D0460E0098638A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9639445BD238432ADEA0D85 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -558,6 +513,7 @@
 		};
 		C587E6DB19D0460E0098638A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAB5474F59226304787C14DE /* Pods-AeroGearSyncClientTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -582,6 +538,7 @@
 		};
 		C587E6DC19D0460E0098638A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 195C824E2333CDFC03C57A7C /* Pods-AeroGearSyncClientTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
