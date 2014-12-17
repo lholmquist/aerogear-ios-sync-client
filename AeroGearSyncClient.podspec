@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = "Red Hat, Inc."
   s.source       = {:git => 'https://github.com/danbev/aerogear-ios-sync-client.git',  :branch => 'cocoapods'}
   s.platform     = :ios, 8.0
-  s.source_files = 'AeroGearSync/*.{h,swift}'
+  s.source_files = 'AeroGearSyncClient/*.{h,swift}'
   s.dependency  'AeroGearSync', '0.1.0'
   s.dependency  'Starscream', '0.9.1'
   s.dependency  'SwiftyJSON', '2.1.2'
