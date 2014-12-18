@@ -44,7 +44,6 @@
 		C587E6D219D0460E0098638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C587E6D319D0460E0098638A /* SyncClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncClientTests.swift; sourceTree = "<group>"; };
 		C587E6DD19D047370098638A /* SyncClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncClient.swift; sourceTree = "<group>"; };
-		C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AeroGearSyncClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		DAB5474F59226304787C14DE /* Pods-AeroGearSyncClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGearSyncClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AeroGearSyncClientTests/Pods-AeroGearSyncClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1DC1BF4DB3FF5D5D0F8C8AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9639445BD238432ADEA0D85 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +115,6 @@
 			children = (
 				C587E6C719D0460E0098638A /* Supporting Files */,
 				C587E6DD19D047370098638A /* SyncClient.swift */,
-				C587E6E219D14E370098638A /* AeroGearSyncClient-Bridging-Header.h */,
 				C5755DC019FE5BD60098B6B2 /* JsonConverter.swift */,
 				C572CBD61A07B20A00E0D4E1 /* JsonDiffMatchPatchSynchronizer.swift */,
 				C5060C561A08EB4C004CF512 /* ContentSerializer.swift */,
@@ -486,7 +484,6 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = AeroGearSyncClient;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AeroGearSyncClient/AeroGearSyncClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -507,7 +504,6 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = AeroGearSyncClient;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AeroGearSyncClient/AeroGearSyncClient-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -531,7 +527,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = AeroGearSyncClientTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "AeroGearSyncClient/AeroGearSyncClient-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				USER_HEADER_SEARCH_PATHS = Pods/SocketRocket;
 			};
 			name = Debug;
@@ -552,7 +548,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = AeroGearSyncClientTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "AeroGearSyncClient/AeroGearSyncClient-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				USER_HEADER_SEARCH_PATHS = Pods/SocketRocket;
 			};
 			name = Release;
