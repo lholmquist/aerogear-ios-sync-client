@@ -6,10 +6,10 @@ import Starscream
 /**
 * A Differential Synchronization client that uses the WebSocket as the transport protocol.
 */
-public class SyncClient<CS:ClientSynchronizer, D:DataStore, S:ContentSerializer where CS.T == D.T, CS.T == S.T>: WebsocketDelegate {
+public class SyncClient<CS:ClientSynchronizer, D:DataStore, S:ContentSerializer where CS.T == D.T, CS.T == S.T>: WebSocketDelegate {
 
     typealias T = CS.T
-    var ws: Websocket!
+    var ws: WebSocket!
     var documents = Dictionary<String, ClientDocument<T>>()
     let syncEngine: ClientSyncEngine<CS, D>
     let contentSerializer: S
@@ -41,9 +41,9 @@ public class SyncClient<CS:ClientSynchronizer, D:DataStore, S:ContentSerializer 
         self.syncEngine = syncEngine
         self.contentSerializer = contentSerializer
         if let protocols = optionalProtocols {
-            ws = Websocket(url: NSURL(string: url)!, protocols: protocols)
+            ws = WebSocket(url: NSURL(string: url)!, protocols: protocols)
         } else {
-            ws = Websocket(url: NSURL(string: url)!)
+            ws = WebSocket(url: NSURL(string: url)!)
         }
         ws.delegate = self
     }
