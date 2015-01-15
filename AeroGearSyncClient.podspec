@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.source_files = 'AeroGearSyncClient/*.{h,swift}'
   s.dependency  'AeroGearSync', '0.1.0'
   s.dependency  'Starscream', '0.9.1'
-  s.dependency  'SwiftyJSON', '2.1.2'
+  s.dependency  'SwiftyJSON', '2.1.3'
 end
