@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AeroGearSync:
-    :commit: c014c544328a2e3d350dfa6c0c910bee52610c81
+    :commit: 8323aa665d8e01f795d43a603d8e82e6935e4763
     :git: https://github.com/danbev/aerogear-ios-sync.git
   Starscream:
     :git: https://github.com/danbev/starscream.git
