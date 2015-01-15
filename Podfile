@@ -1,4 +1,5 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/danbev/Cocoapods-repo.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 xcodeproj 'AeroGearSyncClient.xcodeproj'
 platform :ios, '8.0'

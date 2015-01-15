@@ -1,7 +1,7 @@
 PODS:
   - AeroGearSync (0.1.0):
-    - DiffMatchPatch (= 0.1.0)
-  - DiffMatchPatch (0.1.0)
+    - DiffMatchPatch (= 0.1.1)
+  - DiffMatchPatch (0.1.1)
   - Starscream (0.9.0)
   - SwiftyJSON (2.1.2)
 
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AeroGearSync:
-    :commit: a975e08340709e2bb27f062e91cee246d4d34ac6
+    :commit: c014c544328a2e3d350dfa6c0c910bee52610c81
     :git: https://github.com/danbev/aerogear-ios-sync.git
   Starscream:
     :git: https://github.com/danbev/starscream.git
@@ -33,9 +33,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/danbev/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  AeroGearSync: 90e4a99f7b357b6f52c085b705ea7abd29206e12
-  DiffMatchPatch: 63ed90cdbe6ff858c998d05eef8b543ff765863b
+  AeroGearSync: 4c9a74a8ce20b8d241b0ba9894cc01ea7758e3ec
+  DiffMatchPatch: 4fc78db33f72e29041b97a36ff6b670bf3e288e1
   Starscream: 5ea28fe18585ef80439f8c5cea0ba969acd0cc3b
   SwiftyJSON: b03e3fcc0340816a7935802f5fd39510e3543bd5
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.beta.1
